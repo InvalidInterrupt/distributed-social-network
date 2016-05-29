@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a class="btn btn-default" href="{% url 'posts:form' %}">Write Post</a>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        {% for post in posts %}
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{post.author.name}}</h3>
+          </div>
+          <div class="panel-body">
+            <p>{{post.content}}</p>
+          </div>
+        </div>
+        {% empty %}
+        <h1 style="text-align: center;">No Posts!</h1>
+        {% endfor %}
+      </div>
+    </div>
+{% endblock %}

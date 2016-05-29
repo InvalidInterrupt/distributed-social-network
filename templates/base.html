@@ -1,0 +1,18 @@
+<html>
+    <head>
+      <title>{{ title }}</title>
+      {% block head_resources %}
+      {% include "head_resources.html" %}
+      {% endblock %}
+    </head>
+    <body>
+      <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+          <li{%if section == "posts"%} class="active"{%endif%}><a href="{% url 'posts:index' %}">Posts</a></li>
+          <li{%if section == "directory"%} class="active"{%endif%}><a href="{% url 'directory:index' %}">Directory</a></li>
+        </ul>
+      </nav>
+      {% block content %}
+      {% endblock %}
+    </body>
+</html>

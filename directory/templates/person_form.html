@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" action="{% url 'directory:add' %}">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Post"/>
+</form>
+{% endblock %}
